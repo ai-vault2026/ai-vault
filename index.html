@@ -16,24 +16,21 @@
       color: white;
     }
 
-    /* NAVBAR */
     nav {
       position: fixed;
       width: 100%;
       padding: 15px;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       text-align: center;
-      backdrop-filter: blur(5px);
     }
 
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
     }
 
-    /* HEADER */
     header {
       height: 100vh;
       display: flex;
@@ -45,19 +42,8 @@
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 50px;
       margin-bottom: 10px;
-      animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #00c6ff; }
-      to { text-shadow: 0 0 25px #0072ff; }
-    }
-
-    p {
-      font-size: 18px;
-      opacity: 0.9;
     }
 
     .btn {
@@ -67,38 +53,32 @@
       color: white;
       text-decoration: none;
       border-radius: 30px;
-      transition: 0.3s;
     }
 
-    .btn:hover {
-      background: #0072ff;
-    }
-
-    /* TOOLS SECTION */
     section {
       padding: 80px 20px;
-      background: #111;
       text-align: center;
+      background: #111;
     }
 
     .tools {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
 
     .card {
       background: #1e1e1e;
-      padding: 20px;
-      border-radius: 15px;
-      transition: 0.3s;
+      padding: 25px;
+      border-radius: 20px;
       text-decoration: none;
       color: white;
+      transition: 0.3s;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-10px);
       background: #2a2a2a;
     }
 
@@ -112,52 +92,88 @@
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <a href="#">Home</a>
-    <a href="#tools">Tools</a>
-  </nav>
+<nav>
+  <a href="#">Home</a>
+  <a href="#tools">Tools</a>
+</nav>
 
-  <!-- HERO SECTION -->
-  <header>
-    <h1>AI Vault 🚀</h1>
-    <p>The future of AI tools in one place</p>
-    <a href="#tools" class="btn">Explore Tools</a>
-  </header>
+<header>
+  <h1>AI Vault 🚀</h1>
+  <p>Discover Powerful AI Tools</p>
+  <a href="#tools" class="btn">Explore Tools</a>
+</header>
 
-  <!-- TOOLS SECTION -->
-  <section id="tools">
-    <h2>Popular AI Tools</h2>
+<section id="tools">
+  <h2>Top AI Tools</h2>
 
-    <div class="tools">
+  <div class="tools">
 
-      <a href="https://chat.openai.com" target="_blank" class="card">
-        <h3>ChatGPT</h3>
-        <p>AI chatbot for conversations & coding.</p>
-      </a>
+    <a href="https://chat.openai.com" target="_blank" class="card">
+      <h3>ChatGPT</h3>
+      <p>AI chatbot for conversations & coding.</p>
+    </a>
 
-      <a href="https://midjourney.com" target="_blank" class="card">
-        <h3>Midjourney</h3>
-        <p>AI image generation tool.</p>
-      </a>
+    <a href="https://midjourney.com" target="_blank" class="card">
+      <h3>Midjourney</h3>
+      <p>AI image generation platform.</p>
+    </a>
 
-      <a href="https://github.com/features/copilot" target="_blank" class="card">
-        <h3>GitHub Copilot</h3>
-        <p>AI coding assistant for developers.</p>
-      </a>
+    <a href="https://github.com/features/copilot" target="_blank" class="card">
+      <h3>GitHub Copilot</h3>
+      <p>AI coding assistant.</p>
+    </a>
 
-      <a href="https://notion.so" target="_blank" class="card">
-        <h3>Notion AI</h3>
-        <p>AI writing & productivity assistant.</p>
-      </a>
+    <a href="https://notion.so" target="_blank" class="card">
+      <h3>Notion AI</h3>
+      <p>AI writing and productivity assistant.</p>
+    </a>
 
-    </div>
-  </section>
+    <a href="https://www.canva.com" target="_blank" class="card">
+      <h3>Canva AI</h3>
+      <p>AI-powered graphic design platform.</p>
+    </a>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Created by Yohith 🚀 | 2026</p>
-  </footer>
+    <a href="https://www.deepseek.com" target="_blank" class="card">
+      <h3>DeepSeek</h3>
+      <p>Advanced AI reasoning and coding model.</p>
+    </a>
+
+    <a href="https://runwayml.com" target="_blank" class="card">
+      <h3>Runway ML</h3>
+      <p>AI tools for video creation and editing.</p>
+    </a>
+
+    <a href="https://www.grammarly.com" target="_blank" class="card">
+      <h3>Grammarly AI</h3>
+      <p>AI writing and grammar assistant.</p>
+    </a>
+
+    <a href="https://claude.ai" target="_blank" class="card">
+      <h3>Claude AI</h3>
+      <p>Conversational AI by Anthropic.</p>
+    </a>
+
+    <a href="https://bard.google.com" target="_blank" class="card">
+      <h3>Google Gemini</h3>
+      <p>Google’s advanced AI assistant.</p>
+    </a>
+
+    <a href="https://www.perplexity.ai" target="_blank" class="card">
+      <h3>Perplexity AI</h3>
+      <p>AI-powered answer engine.</p>
+    </a>
+
+    <a href="https://www.adobe.com/sensei.html" target="_blank" class="card">
+      <h3>Adobe Sensei</h3>
+      <p>AI tools for creative design and editing.</p>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <p>Created by Yohith 🚀 | 2026</p>
+</footer>
 
 </body>
 </html>
