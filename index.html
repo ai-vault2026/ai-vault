@@ -3,7 +3,7 @@
 <head>
   <title>AI Vault</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -12,10 +12,28 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #141e30, #243b55);
       color: white;
     }
 
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      width: 100%;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* HEADER */
     header {
       height: 100vh;
       display: flex;
@@ -23,11 +41,18 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding-top: 60px;
     }
 
     h1 {
       font-size: 48px;
       margin-bottom: 10px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00c6ff; }
+      to { text-shadow: 0 0 25px #0072ff; }
     }
 
     p {
@@ -49,8 +74,9 @@
       background: #0072ff;
     }
 
+    /* TOOLS SECTION */
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       background: #111;
       text-align: center;
     }
@@ -67,6 +93,8 @@
       padding: 20px;
       border-radius: 15px;
       transition: 0.3s;
+      text-decoration: none;
+      color: white;
     }
 
     .card:hover {
@@ -74,46 +102,62 @@
       background: #2a2a2a;
     }
 
-    .card h3 {
-      margin: 10px 0;
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#tools">Tools</a>
+  </nav>
+
+  <!-- HERO SECTION -->
   <header>
     <h1>AI Vault 🚀</h1>
     <p>The future of AI tools in one place</p>
     <a href="#tools" class="btn">Explore Tools</a>
   </header>
 
+  <!-- TOOLS SECTION -->
   <section id="tools">
     <h2>Popular AI Tools</h2>
 
     <div class="tools">
-      <div class="card">
+
+      <a href="https://chat.openai.com" target="_blank" class="card">
         <h3>ChatGPT</h3>
         <p>AI chatbot for conversations & coding.</p>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="https://midjourney.com" target="_blank" class="card">
         <h3>Midjourney</h3>
         <p>AI image generation tool.</p>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="https://github.com/features/copilot" target="_blank" class="card">
         <h3>GitHub Copilot</h3>
         <p>AI coding assistant for developers.</p>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="https://notion.so" target="_blank" class="card">
         <h3>Notion AI</h3>
         <p>AI writing & productivity assistant.</p>
-      </div>
-    </div>
+      </a>
 
+    </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Created by Yohith 🚀 | 2026</p>
+  </footer>
 
 </body>
 </html>
