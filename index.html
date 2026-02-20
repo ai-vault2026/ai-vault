@@ -5,16 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        html { scroll-behavior: smooth; }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background: linear-gradient(135deg, #141e30, #243b55);
             color: white;
             text-align: center;
         }
 
-        h1 {
-            padding: 20px;
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 { font-size: 42px; }
+
+        .hero button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #00c6ff;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background: #00ffcc;
+            transform: scale(1.05);
+        }
+
+        #tools {
+            background: #0f172a;
+            padding: 50px 20px;
+        }
+
+        h2 {
+            margin-top: 50px;
         }
 
         .container {
@@ -22,100 +56,95 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            padding: 20px;
+            margin-top: 20px;
         }
 
         .tool-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.08);
             padding: 20px;
             width: 220px;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            transition: 0.3s;
         }
 
         .tool-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.4);
         }
 
-        .tool-card img {
-            height: 60px;
-            object-fit: contain;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .tool-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .tool-card h3 {
-            margin: 10px 0;
-        }
+        .tool-card h3 { margin: 10px 0; }
 
         .tool-card p {
             font-size: 14px;
-            color: #ddd;
+            color: #ccc;
         }
 
         .tool-card a {
             display: inline-block;
             margin-top: 10px;
-            padding: 8px 15px;
+            padding: 8px 14px;
             background: #00c6ff;
             color: black;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: bold;
-            transition: background 0.3s;
         }
 
-        .tool-card a:hover {
-            background: #00ffcc;
-        }
+        .tool-card a:hover { background: #00ffcc; }
     </style>
 </head>
 
 <body>
 
-    <h1>🚀 AI Vault</h1>
+<div class="hero">
+    <h1>🚀 Welcome to AI Vault</h1>
+    <p>Explore 40 Powerful AI Tools</p>
+    <a href="#tools"><button>Explore AI Tools</button></a>
+</div>
 
-    <div class="container">
+<section id="tools">
 
-        <!-- ChatGPT -->
-        <div class="tool-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/OpenAI_Logo.svg" alt="ChatGPT">
-            <h3>ChatGPT</h3>
-            <p>Smart AI chatbot for writing, coding & more.</p>
-            <a href="https://chat.openai.com" target="_blank">Explore</a>
-        </div>
+<!-- CHATBOTS -->
+<h2>🤖 AI Chatbots</h2>
+<div class="container">
+<div class="tool-card"><h3>ChatGPT</h3><p>AI chatbot.</p><a href="https://chat.openai.com" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Claude</h3><p>Anthropic assistant.</p><a href="https://claude.ai" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Gemini</h3><p>Google AI.</p><a href="https://gemini.google.com" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Copilot</h3><p>Microsoft AI.</p><a href="https://copilot.microsoft.com" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Perplexity</h3><p>AI search engine.</p><a href="https://www.perplexity.ai" target="_blank">Visit</a></div>
+</div>
 
-        <!-- Canva -->
-        <div class="tool-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" alt="Canva">
-            <h3>Canva</h3>
-            <p>Create stunning designs easily with AI tools.</p>
-            <a href="https://www.canva.com" target="_blank">Explore</a>
-        </div>
+<!-- IMAGE TOOLS -->
+<h2>🎨 AI Image Tools</h2>
+<div class="container">
+<div class="tool-card"><h3>Midjourney</h3><p>AI art.</p><a href="https://www.midjourney.com" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>DALL·E</h3><p>Image generator.</p><a href="https://openai.com/dall-e" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Leonardo AI</h3><p>Creative AI art.</p><a href="https://leonardo.ai" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Stable Diffusion</h3><p>Open AI art.</p><a href="https://stability.ai" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Playground AI</h3><p>Art creation.</p><a href="https://playgroundai.com" target="_blank">Visit</a></div>
+</div>
 
-        <!-- DeepSeek -->
-        <div class="tool-card">
-            <img src="https://seeklogo.com/images/D/deepseek-logo-1E5F3C9E5A-seeklogo.com.png" alt="DeepSeek">
-            <h3>DeepSeek</h3>
-            <p>Advanced AI model for coding and reasoning.</p>
-            <a href="https://www.deepseek.com" target="_blank">Explore</a>
-        </div>
+<!-- WRITING TOOLS -->
+<h2>✍ AI Writing Tools</h2>
+<div class="container">
+<div class="tool-card"><h3>Grammarly</h3><p>Writing assistant.</p><a href="https://www.grammarly.com" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Jasper</h3><p>Marketing AI.</p><a href="https://www.jasper.ai" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Copy.ai</h3><p>Content writer.</p><a href="https://www.copy.ai" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Writesonic</h3><p>Blog writing.</p><a href="https://writesonic.com" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Quillbot</h3><p>Paraphrasing tool.</p><a href="https://quillbot.com" target="_blank">Visit</a></div>
+</div>
 
-        <!-- Perplexity -->
-        <div class="tool-card">
-            <img src="https://seeklogo.com/images/P/perplexity-ai-logo-8E9D0FDCB3-seeklogo.com.png" alt="Perplexity">
-            <h3>Perplexity AI</h3>
-            <p>AI-powered search engine assistant.</p>
-            <a href="https://www.perplexity.ai" target="_blank">Explore</a>
-        </div>
+<!-- CODING TOOLS -->
+<h2>💻 AI Coding Tools</h2>
+<div class="container">
+<div class="tool-card"><h3>Replit AI</h3><p>Code assistant.</p><a href="https://replit.com" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Tabnine</h3><p>Code completion.</p><a href="https://www.tabnine.com" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>DeepSeek</h3><p>Advanced reasoning.</p><a href="https://www.deepseek.com" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Hugging Face</h3><p>AI models.</p><a href="https://huggingface.co" target="_blank">Visit</a></div>
+<div class="tool-card"><h3>Notion AI</h3><p>Smart docs.</p><a href="https://www.notion.so" target="_blank">Visit</a></div>
+</div>
 
-    </div>
+</section>
 
 </body>
 </html>
