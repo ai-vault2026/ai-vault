@@ -6,244 +6,170 @@
 <title>AI Vault</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-  background:#0f172a;
-  color:white;
-}
-
-.hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
-
-.hero h1{
-  font-size:50px;
-  margin-bottom:15px;
-}
-
-.hero p{
-  font-size:18px;
-  color:#cbd5e1;
-}
-
-.hero button{
-  margin-top:25px;
-  padding:12px 28px;
-  font-size:18px;
-  border:none;
-  border-radius:8px;
-  background:#3b82f6;
-  color:white;
-  cursor:pointer;
-}
-
-.section{
-  padding:70px 20px;
-  background:#0f172a; /* FULL DARK */
-}
-
-.section h2{
-  text-align:center;
-  margin-bottom:35px;
-  font-size:34px;
-}
-
-.search-bar{
-  max-width:500px;
-  margin:0 auto 30px;
-  display:flex;
-}
-
-.search-bar input{
-  flex:1;
-  padding:12px;
-  border:none;
-  outline:none;
-  border-radius:8px 0 0 8px;
-}
-
-.search-bar button{
-  padding:12px 18px;
-  border:none;
-  background:#3b82f6;
-  color:white;
-  border-radius:0 8px 8px 0;
-  cursor:pointer;
-}
-
-.categories{
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.categories button{
-  margin:5px;
-  padding:8px 14px;
-  border:none;
-  border-radius:6px;
-  background:#1f2937;
-  color:white;
-  cursor:pointer;
-}
-
-.categories button:hover{
-  background:#374151;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.card{
-  background:#1f2937;
-  padding:22px;
-  border-radius:10px;
-  text-align:center;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  background:#374151;
-}
-
-.card a{
-  text-decoration:none;
-  color:white;
-  font-weight:bold;
-  font-size:16px;
-}
-
-footer{
-  text-align:center;
-  padding:25px;
-  background:#0f172a;
-  color:#94a3b8;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+body{background:#0f172a;color:white;}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+.hero h1{font-size:50px;margin-bottom:15px;}
+.hero p{color:#cbd5e1;}
+.hero button{margin-top:25px;padding:12px 28px;font-size:18px;border:none;border-radius:8px;background:#3b82f6;color:white;cursor:pointer;}
+.section{padding:70px 20px;background:#0f172a;}
+.section h2{text-align:center;margin-bottom:35px;font-size:34px;}
+.search-bar{max-width:500px;margin:0 auto 30px;display:flex;}
+.search-bar input{flex:1;padding:12px;border:none;border-radius:8px 0 0 8px;}
+.search-bar button{padding:12px 18px;border:none;background:#3b82f6;color:white;border-radius:0 8px 8px 0;cursor:pointer;}
+.categories{text-align:center;margin-bottom:30px;}
+.categories button{margin:5px;padding:8px 14px;border:none;border-radius:6px;background:#1f2937;color:white;cursor:pointer;}
+.categories button:hover{background:#374151;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1200px;margin:auto;}
+.card{background:#1f2937;padding:22px;border-radius:10px;text-align:center;transition:0.3s;}
+.card:hover{transform:translateY(-5px);background:#374151;}
+.card a{text-decoration:none;color:white;font-weight:bold;}
+footer{text-align:center;padding:25px;background:#0f172a;color:#94a3b8;}
 </style>
 </head>
 
 <body>
 
 <div class="hero">
-  <h1>AI Vault</h1>
-  <p>Your Ultimate AI Tools Directory</p>
-  <button onclick="scrollToTools()">Explore</button>
+<h1>AI Vault</h1>
+<p>Your Ultimate AI Tools Directory</p>
+<button onclick="scrollToTools()">Explore</button>
 </div>
 
 <div class="section" id="toolsSection">
-  <h2>AI Tools</h2>
+<h2>AI Tools</h2>
 
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Search AI tools...">
-    <button onclick="searchTools()">Search</button>
-  </div>
-
-  <div class="categories">
-    <button onclick="filterCategory('All')">All</button>
-    <button onclick="filterCategory('Chat')">Chat</button>
-    <button onclick="filterCategory('Image')">Image</button>
-    <button onclick="filterCategory('Video')">Video</button>
-    <button onclick="filterCategory('Writing')">Writing</button>
-    <button onclick="filterCategory('Productivity')">Productivity</button>
-    <button onclick="filterCategory('Coding')">Coding</button>
-  </div>
-
-  <div class="grid" id="toolsGrid"></div>
+<div class="search-bar">
+<input type="text" id="searchInput" placeholder="Search AI tools...">
+<button onclick="searchTools()">Search</button>
 </div>
 
-<footer>
-  © 2026 AI Vault
-</footer>
+<div class="categories">
+<button onclick="filterCategory('All')">All</button>
+<button onclick="filterCategory('Chat')">Chat</button>
+<button onclick="filterCategory('Image')">Image</button>
+<button onclick="filterCategory('Video')">Video</button>
+<button onclick="filterCategory('Writing')">Writing</button>
+<button onclick="filterCategory('Productivity')">Productivity</button>
+<button onclick="filterCategory('Coding')">Coding</button>
+<button onclick="filterCategory('Music')">Music</button>
+<button onclick="filterCategory('Design')">Design</button>
+</div>
+
+<div class="grid" id="toolsGrid"></div>
+</div>
+
+<footer>© 2026 AI Vault</footer>
 
 <script>
 function scrollToTools(){
-  document.getElementById("toolsSection")
-  .scrollIntoView({behavior:"smooth"});
+document.getElementById("toolsSection").scrollIntoView({behavior:"smooth"});
 }
 
 const tools = [
-{ name:"ChatGPT",category:"Chat",url:"https://chat.openai.com"},
-{ name:"Gemini",category:"Chat",url:"https://gemini.google.com"},
-{ name:"Claude",category:"Chat",url:"https://claude.ai"},
-{ name:"Microsoft Copilot",category:"Chat",url:"https://copilot.microsoft.com"},
-{ name:"Perplexity AI",category:"Chat",url:"https://www.perplexity.ai"},
-{ name:"DeepSeek",category:"Chat",url:"https://chat.deepseek.com"},
-{ name:"Poe AI",category:"Chat",url:"https://poe.com"},
-{ name:"Character AI",category:"Chat",url:"https://character.ai"},
 
-{ name:"Midjourney",category:"Image",url:"https://www.midjourney.com"},
-{ name:"DALL·E",category:"Image",url:"https://openai.com/dall-e"},
-{ name:"Leonardo AI",category:"Image",url:"https://leonardo.ai"},
-{ name:"Stable Diffusion",category:"Image",url:"https://stability.ai"},
-{ name:"Adobe Firefly",category:"Image",url:"https://firefly.adobe.com"},
-{ name:"Canva AI",category:"Image",url:"https://www.canva.com"},
+/* CHAT */
+{name:"ChatGPT",category:"Chat",url:"https://chat.openai.com"},
+{name:"Gemini",category:"Chat",url:"https://gemini.google.com"},
+{name:"Claude",category:"Chat",url:"https://claude.ai"},
+{name:"Microsoft Copilot",category:"Chat",url:"https://copilot.microsoft.com"},
+{name:"Perplexity AI",category:"Chat",url:"https://www.perplexity.ai"},
+{name:"DeepSeek",category:"Chat",url:"https://chat.deepseek.com"},
+{name:"Poe AI",category:"Chat",url:"https://poe.com"},
+{name:"Character AI",category:"Chat",url:"https://character.ai"},
 
-{ name:"Runway ML",category:"Video",url:"https://runwayml.com"},
-{ name:"Pika Labs",category:"Video",url:"https://pika.art"},
-{ name:"Synthesia",category:"Video",url:"https://www.synthesia.io"},
-{ name:"HeyGen",category:"Video",url:"https://www.heygen.com"},
+/* IMAGE */
+{name:"Midjourney",category:"Image",url:"https://www.midjourney.com"},
+{name:"DALL·E",category:"Image",url:"https://openai.com/dall-e"},
+{name:"Leonardo AI",category:"Image",url:"https://leonardo.ai"},
+{name:"Stable Diffusion",category:"Image",url:"https://stability.ai"},
+{name:"Adobe Firefly",category:"Image",url:"https://firefly.adobe.com"},
+{name:"Canva AI",category:"Image",url:"https://www.canva.com"},
+{name:"Playground AI",category:"Image",url:"https://playgroundai.com"},
+{name:"NightCafe",category:"Image",url:"https://creator.nightcafe.studio"},
 
-{ name:"Jasper AI",category:"Writing",url:"https://www.jasper.ai"},
-{ name:"Copy.ai",category:"Writing",url:"https://www.copy.ai"},
-{ name:"Writesonic",category:"Writing",url:"https://writesonic.com"},
-{ name:"Rytr",category:"Writing",url:"https://rytr.me"},
+/* VIDEO */
+{name:"Runway ML",category:"Video",url:"https://runwayml.com"},
+{name:"Pika Labs",category:"Video",url:"https://pika.art"},
+{name:"Synthesia",category:"Video",url:"https://www.synthesia.io"},
+{name:"HeyGen",category:"Video",url:"https://www.heygen.com"},
+{name:"Kaiber",category:"Video",url:"https://kaiber.ai"},
+{name:"Lumen5",category:"Video",url:"https://lumen5.com"},
+{name:"InVideo AI",category:"Video",url:"https://invideo.io"},
+{name:"Descript",category:"Video",url:"https://www.descript.com"},
 
-{ name:"Notion AI",category:"Productivity",url:"https://www.notion.so/product/ai"},
-{ name:"ClickUp AI",category:"Productivity",url:"https://clickup.com/ai"},
-{ name:"Otter AI",category:"Productivity",url:"https://otter.ai"},
-{ name:"Fireflies AI",category:"Productivity",url:"https://fireflies.ai"},
+/* WRITING */
+{name:"Jasper AI",category:"Writing",url:"https://www.jasper.ai"},
+{name:"Copy.ai",category:"Writing",url:"https://www.copy.ai"},
+{name:"Writesonic",category:"Writing",url:"https://writesonic.com"},
+{name:"Rytr",category:"Writing",url:"https://rytr.me"},
+{name:"Sudowrite",category:"Writing",url:"https://www.sudowrite.com"},
+{name:"Quillbot",category:"Writing",url:"https://quillbot.com"},
+{name:"Grammarly AI",category:"Writing",url:"https://www.grammarly.com"},
+{name:"Wordtune",category:"Writing",url:"https://www.wordtune.com"},
 
-{ name:"GitHub Copilot",category:"Coding",url:"https://github.com/features/copilot"},
-{ name:"Codeium",category:"Coding",url:"https://codeium.com"},
-{ name:"Tabnine",category:"Coding",url:"https://www.tabnine.com"},
-{ name:"Replit AI",category:"Coding",url:"https://replit.com"}
+/* PRODUCTIVITY */
+{name:"Notion AI",category:"Productivity",url:"https://www.notion.so/product/ai"},
+{name:"ClickUp AI",category:"Productivity",url:"https://clickup.com/ai"},
+{name:"Otter AI",category:"Productivity",url:"https://otter.ai"},
+{name:"Fireflies AI",category:"Productivity",url:"https://fireflies.ai"},
+{name:"Tome AI",category:"Productivity",url:"https://tome.app"},
+{name:"Mem AI",category:"Productivity",url:"https://mem.ai"},
+{name:"Taskade AI",category:"Productivity",url:"https://www.taskade.com"},
+{name:"Motion AI",category:"Productivity",url:"https://www.usemotion.com"},
+
+/* CODING */
+{name:"GitHub Copilot",category:"Coding",url:"https://github.com/features/copilot"},
+{name:"Codeium",category:"Coding",url:"https://codeium.com"},
+{name:"Tabnine",category:"Coding",url:"https://www.tabnine.com"},
+{name:"Replit AI",category:"Coding",url:"https://replit.com"},
+{name:"Amazon CodeWhisperer",category:"Coding",url:"https://aws.amazon.com/codewhisperer"},
+{name:"Cursor AI",category:"Coding",url:"https://cursor.sh"},
+{name:"Phind AI",category:"Coding",url:"https://www.phind.com"},
+{name:"Blackbox AI",category:"Coding",url:"https://www.blackbox.ai"},
+
+/* MUSIC */
+{name:"Soundraw",category:"Music",url:"https://soundraw.io"},
+{name:"AIVA",category:"Music",url:"https://www.aiva.ai"},
+{name:"Boomy",category:"Music",url:"https://boomy.com"},
+{name:"Mubert",category:"Music",url:"https://mubert.com"},
+{name:"Beatoven AI",category:"Music",url:"https://www.beatoven.ai"},
+{name:"Voicemod AI",category:"Music",url:"https://www.voicemod.net"},
+{name:"ElevenLabs",category:"Music",url:"https://elevenlabs.io"},
+{name:"LALAL AI",category:"Music",url:"https://www.lalal.ai"},
+
+/* DESIGN */
+{name:"Looka AI",category:"Design",url:"https://looka.com"},
+{name:"Brandmark AI",category:"Design",url:"https://brandmark.io"},
+{name:"LogoAI",category:"Design",url:"https://logoai.com"},
+{name:"Khroma",category:"Design",url:"https://khroma.co"},
+{name:"Designs.ai",category:"Design",url:"https://designs.ai"},
+{name:"Beautiful.ai",category:"Design",url:"https://www.beautiful.ai"},
+{name:"Stockimg AI",category:"Design",url:"https://stockimg.ai"},
+{name:"Illustroke",category:"Design",url:"https://illustroke.com"}
+
 ];
 
-function displayTools(filtered){
-  const grid=document.getElementById("toolsGrid");
-  grid.innerHTML="";
-  filtered.forEach(tool=>{
-    const div=document.createElement("div");
-    div.className="card";
-    div.innerHTML=`<a href="${tool.url}" target="_blank">${tool.name}</a>`;
-    grid.appendChild(div);
-  });
+function displayTools(list){
+const grid=document.getElementById("toolsGrid");
+grid.innerHTML="";
+list.forEach(tool=>{
+const div=document.createElement("div");
+div.className="card";
+div.innerHTML=`<a href="${tool.url}" target="_blank">${tool.name}</a>`;
+grid.appendChild(div);
+});
 }
 
 function searchTools(){
-  const value=document.getElementById("searchInput")
-  .value.toLowerCase();
-  const filtered=tools.filter(tool =>
-    tool.name.toLowerCase().includes(value)
-  );
-  displayTools(filtered);
+const value=document.getElementById("searchInput").value.toLowerCase();
+const filtered=tools.filter(t=>t.name.toLowerCase().includes(value));
+displayTools(filtered);
 }
 
 function filterCategory(category){
-  if(category==="All"){
-    displayTools(tools);
-  } else{
-    const filtered=tools.filter(tool =>
-      tool.category===category
-    );
-    displayTools(filtered);
-  }
+if(category==="All"){displayTools(tools);}
+else{displayTools(tools.filter(t=>t.category===category));}
 }
 
 displayTools(tools);
