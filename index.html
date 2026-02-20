@@ -5,203 +5,169 @@
 <title>AI Vault</title>
 
 <style>
-html { scroll-behavior: smooth; }
-
 body {
-    margin: 0;
+    margin:0;
     font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-    text-align: center;
+    background:#0f172a;
+    color:white;
+    text-align:center;
 }
 
-/* HERO */
 .hero {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #141e30, #243b55);
+    padding:60px 20px;
+    background:linear-gradient(135deg,#141e30,#243b55);
 }
 
-.hero h1 {
-    font-size: 42px;
-}
+.hero h1 { font-size:40px; }
 
-.hero button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    background: #00c6ff;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* CONTROLS */
-.controls {
-    padding: 20px;
-}
+.controls { padding:20px; }
 
 #search {
-    padding: 10px;
-    width: 250px;
-    border-radius: 6px;
-    border: none;
+    padding:10px;
+    width:260px;
+    border-radius:6px;
+    border:none;
 }
 
 .filter-btn {
-    padding: 8px 14px;
-    margin: 5px;
-    border: none;
-    border-radius: 6px;
-    background: #1e293b;
-    color: white;
-    cursor: pointer;
+    padding:8px 14px;
+    margin:5px;
+    border:none;
+    border-radius:6px;
+    background:#1e293b;
+    color:white;
+    cursor:pointer;
 }
 
 .filter-btn.active {
-    background: #00c6ff;
-    color: black;
+    background:#00c6ff;
+    color:black;
 }
 
-/* TOOLS */
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
 }
 
 .tool-card {
-    background: #1e293b;
-    padding: 20px;
-    width: 220px;
-    border-radius: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.4s;
+    background:#1e293b;
+    padding:20px;
+    width:200px;
+    border-radius:10px;
+    opacity:0;
+    transform:translateY(20px);
+    transition:0.4s;
 }
 
 .tool-card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.tool-card h3 {
-    margin: 10px 0;
+    opacity:1;
+    transform:translateY(0);
 }
 
 .tool-card a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 14px;
-    background: #00c6ff;
-    color: black;
-    text-decoration: none;
-    border-radius: 6px;
+    display:inline-block;
+    margin-top:10px;
+    padding:6px 12px;
+    background:#00c6ff;
+    color:black;
+    text-decoration:none;
+    border-radius:6px;
 }
 
-/* MOBILE */
 @media(max-width:600px){
-    .tool-card { width: 90%; }
-    #search { width: 90%; }
+    .tool-card { width:90%; }
+    #search { width:90%; }
 }
 </style>
 </head>
-
 <body>
 
 <div class="hero">
     <h1>🚀 AI Vault</h1>
-    <p id="counter">40 AI Tools Available</p>
-    <a href="#tools"><button>Explore Tools</button></a>
+    <p id="counter">Loading tools...</p>
 </div>
 
-<div id="tools" class="controls">
-
+<div class="controls">
 <input type="text" id="search" placeholder="Search AI tools...">
 
 <div>
-<button class="filter-btn active" onclick="filterTools('all')">All</button>
-<button class="filter-btn" onclick="filterTools('chatbot')">Chatbots</button>
-<button class="filter-btn" onclick="filterTools('image')">Image</button>
-<button class="filter-btn" onclick="filterTools('writing')">Writing</button>
-<button class="filter-btn" onclick="filterTools('coding')">Coding</button>
-<button class="filter-btn" onclick="filterTools('video')">Video</button>
+<button class="filter-btn active" onclick="setCategory('all', this)">All</button>
+<button class="filter-btn" onclick="setCategory('chatbot', this)">Chatbots</button>
+<button class="filter-btn" onclick="setCategory('image', this)">Image</button>
+<button class="filter-btn" onclick="setCategory('writing', this)">Writing</button>
+<button class="filter-btn" onclick="setCategory('coding', this)">Coding</button>
+<button class="filter-btn" onclick="setCategory('video', this)">Video</button>
+</div>
 </div>
 
-</div>
-
-<div class="container" id="toolContainer">
-
-<div class="tool-card chatbot show"><h3>ChatGPT</h3><a href="#">Visit</a></div>
-<div class="tool-card chatbot show"><h3>Claude</h3><a href="#">Visit</a></div>
-<div class="tool-card chatbot show"><h3>Gemini</h3><a href="#">Visit</a></div>
-<div class="tool-card chatbot show"><h3>Copilot</h3><a href="#">Visit</a></div>
-<div class="tool-card chatbot show"><h3>Perplexity</h3><a href="#">Visit</a></div>
-
-<div class="tool-card image show"><h3>Midjourney</h3><a href="#">Visit</a></div>
-<div class="tool-card image show"><h3>DALL·E</h3><a href="#">Visit</a></div>
-<div class="tool-card image show"><h3>Leonardo AI</h3><a href="#">Visit</a></div>
-<div class="tool-card image show"><h3>Stable Diffusion</h3><a href="#">Visit</a></div>
-<div class="tool-card image show"><h3>Playground AI</h3><a href="#">Visit</a></div>
-
-<div class="tool-card writing show"><h3>Grammarly</h3><a href="#">Visit</a></div>
-<div class="tool-card writing show"><h3>Jasper</h3><a href="#">Visit</a></div>
-<div class="tool-card writing show"><h3>Copy.ai</h3><a href="#">Visit</a></div>
-<div class="tool-card writing show"><h3>Writesonic</h3><a href="#">Visit</a></div>
-<div class="tool-card writing show"><h3>Quillbot</h3><a href="#">Visit</a></div>
-
-<div class="tool-card coding show"><h3>Replit AI</h3><a href="#">Visit</a></div>
-<div class="tool-card coding show"><h3>Tabnine</h3><a href="#">Visit</a></div>
-<div class="tool-card coding show"><h3>DeepSeek</h3><a href="#">Visit</a></div>
-<div class="tool-card coding show"><h3>Hugging Face</h3><a href="#">Visit</a></div>
-<div class="tool-card coding show"><h3>Notion AI</h3><a href="#">Visit</a></div>
-
-<div class="tool-card video show"><h3>Runway</h3><a href="#">Visit</a></div>
-<div class="tool-card video show"><h3>Synthesia</h3><a href="#">Visit</a></div>
-<div class="tool-card video show"><h3>Pictory</h3><a href="#">Visit</a></div>
-<div class="tool-card video show"><h3>Descript</h3><a href="#">Visit</a></div>
-<div class="tool-card video show"><h3>Kaiber</h3><a href="#">Visit</a></div>
-
-</div>
+<div class="container" id="toolContainer"></div>
 
 <script>
+
+const tools = [];
+
+/* ---------- GENERATE 80 TOOLS ---------- */
+
+const categories = ["chatbot","image","writing","coding","video"];
+
+for(let i=1;i<=80;i++){
+    tools.push({
+        name: "AI Tool " + i,
+        category: categories[i % 5]
+    });
+}
+
+/* --------------------------------------- */
+
+const container = document.getElementById("toolContainer");
 const searchInput = document.getElementById("search");
-const cards = document.querySelectorAll(".tool-card");
 const counter = document.getElementById("counter");
 
-function updateCounter() {
-    const visible = document.querySelectorAll(".tool-card.show").length;
-    counter.innerText = visible + " AI Tools Available";
-}
+let currentCategory = "all";
 
-function filterTools(category) {
-    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-    event.target.classList.add("active");
+function renderTools(){
+    container.innerHTML = "";
 
-    cards.forEach(card => {
-        if(category === "all" || card.classList.contains(category)){
-            card.classList.add("show");
-        } else {
-            card.classList.remove("show");
+    let visibleCount = 0;
+
+    tools.forEach(tool => {
+
+        if((currentCategory === "all" || tool.category === currentCategory) &&
+           tool.name.toLowerCase().includes(searchInput.value.toLowerCase())){
+
+            const card = document.createElement("div");
+            card.className = "tool-card show";
+            card.innerHTML = `
+                <h3>${tool.name}</h3>
+                <p>Category: ${tool.category}</p>
+                <a href="#">Visit</a>
+            `;
+            container.appendChild(card);
+            visibleCount++;
         }
     });
-    updateCounter();
+
+    counter.innerText = visibleCount + " AI Tools Available";
 }
 
-searchInput.addEventListener("keyup", function(){
-    const value = this.value.toLowerCase();
-    cards.forEach(card => {
-        const name = card.innerText.toLowerCase();
-        if(name.includes(value)){
-            card.classList.add("show");
-        } else {
-            card.classList.remove("show");
-        }
-    });
-    updateCounter();
-});
+function setCategory(category, btn){
+    currentCategory = category;
 
-updateCounter();
+    document.querySelectorAll(".filter-btn")
+        .forEach(b => b.classList.remove("active"));
+
+    btn.classList.add("active");
+
+    renderTools();
+}
+
+searchInput.addEventListener("keyup", renderTools);
+
+renderTools();
+
 </script>
 
 </body>
